@@ -44,3 +44,21 @@ def update_expense(expense_id, description, amount, category_id):
         click.echo(f'Expense with ID {expense_id} updated.')
     except Exception as e:
         click.echo(f'Error updating expense: {e}')
+
+@cli.command()
+@click.argument('expense_id', type=int)
+def delete_expense(expense_id):
+    """Delete an expense."""
+    try:
+        Expense.delete(expense_id)
+        click.echo(f'Expense with ID {expense_id} deleted.')
+    except Exception as e:
+        click.echo(f'Error deleting expense: {e}')
+
+@cli.command()
+def clear_expenses():
+    """Clear all expenses."""
+    try:
+        Expense.clear()
+        click.echo('All expenses cleared.')
+    except Exception as e:
