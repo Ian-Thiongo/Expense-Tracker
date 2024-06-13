@@ -74,3 +74,13 @@ def add_category(name):
         click.echo(f'Category "{name}" added.')
     except Exception as e:
         click.echo(f'Error adding category: {e}')
+
+@cli.command()
+def view_categories():
+    """View all categories."""
+    try:
+        categories = Category.get_all()
+        for category in categories:
+            click.echo(f'ID: {category[0]}, Name: {category[1]}')
+    except Exception as e:
+        click.echo(f'Error fetching categories: {e}')
