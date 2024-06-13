@@ -1,7 +1,7 @@
 import sqlite3
 
 class ORM:
-    def __init__(self, db_name):
+    def __init__(self, db_name= 'expenses.db'):
         self.db_name = db_name
 
     def execute(self, query, params=None):
