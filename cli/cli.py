@@ -84,3 +84,13 @@ def view_categories():
             click.echo(f'ID: {category[0]}, Name: {category[1]}')
     except Exception as e:
         click.echo(f'Error fetching categories: {e}')
+
+@cli.command()
+@click.argument('category_id', type=int)
+def delete_category(category_id):
+    """Delete a category."""
+    try:
+        Category.delete(category_id)
+        click.echo(f'Category with ID {category_id} deleted.')
+    except Exception as e:
+        click.echo(f'Error deleting category: {e}')
