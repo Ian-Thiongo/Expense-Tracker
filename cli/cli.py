@@ -14,3 +14,10 @@ def cli():
 @click.argument('description')
 @click.argument('amount', type=float)
 @click.argument('category_id', type=int)
+def add_expense(description, amount, category_id):
+    """Add a new expense."""
+    try:
+        Expense.create(description, amount, category_id)
+        click.echo(f'Expense "{description}" with amount {amount} added.')
+    except Exception as e:
+        click.echo(f'Error adding expense: {e}')
