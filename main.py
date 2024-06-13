@@ -88,3 +88,27 @@ def delete_category():
         print("Category deleted successfully.")
     except Exception as e:
         print(f"Error deleting category: {e}")
+
+def main():
+    while True:
+        choice = main_menu()
+        if choice == '1':
+            add_expense()
+        elif choice == '2':
+            view_expenses()
+        elif choice == '3':
+            update_expense()
+        elif choice == '4':
+            delete_expense()
+        elif choice == '5':
+            add_category()
+        elif choice == '6':
+            view_categories()
+        elif choice == '7':
+            delete_category()
+        elif choice == '8':
+            print("Exiting the application.")
+            break
+        else:
+            print("Invalid choice, please try again.")
+        input("Press Enter to continue...")
