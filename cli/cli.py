@@ -63,3 +63,14 @@ def clear_expenses():
         click.echo('All expenses cleared.')
     except Exception as e:
           click.echo(f'Error clearing expenses: {e}')
+
+
+@cli.command()
+@click.argument('name')
+def add_category(name):
+    """Add a new category."""
+    try:
+        Category.create(name)
+        click.echo(f'Category "{name}" added.')
+    except Exception as e:
+        click.echo(f'Error adding category: {e}')
