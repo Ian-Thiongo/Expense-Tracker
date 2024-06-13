@@ -62,3 +62,4 @@ def clear_expenses():
         Expense.clear()
         click.echo('All expenses cleared.')
     except Exception as e:
+          click.echo(f'Error clearing expenses: {e}')
