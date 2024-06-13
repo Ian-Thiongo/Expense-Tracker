@@ -31,3 +31,16 @@ def view_expenses():
             click.echo(f'ID: {expense[0]}, Description: {expense[1]}, Amount: {expense[2]}, Category ID: {expense[3]}')
     except Exception as e:
          click.echo(f'Error fetching expenses: {e}')
+
+@cli.command()
+@click.argument('expense_id', type=int)
+@click.argument('description')
+@click.argument('amount', type=float)
+@click.argument('category_id', type=int)
+def update_expense(expense_id, description, amount, category_id):
+    """Update an expense."""
+    try:
+        Expense.update(expense_id, description, amount, category_id)
+        click.echo(f'Expense with ID {expense_id} updated.')
+    except Exception as e:
+        click.echo(f'Error updating expense: {e}')
