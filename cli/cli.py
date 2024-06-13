@@ -94,3 +94,6 @@ def delete_category(category_id):
         click.echo(f'Category with ID {category_id} deleted.')
     except Exception as e:
         click.echo(f'Error deleting category: {e}')
+
+if __name__ == '__main__':
+    cli()
