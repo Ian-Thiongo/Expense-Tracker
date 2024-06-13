@@ -21,3 +21,13 @@ def add_expense(description, amount, category_id):
         click.echo(f'Expense "{description}" with amount {amount} added.')
     except Exception as e:
         click.echo(f'Error adding expense: {e}')
+
+@cli.command()
+def view_expenses():
+    """View all expenses."""
+    try:
+        expenses = Expense.get_all()
+        for expense in expenses:
+            click.echo(f'ID: {expense[0]}, Description: {expense[1]}, Amount: {expense[2]}, Category ID: {expense[3]}')
+    except Exception as e:
+         click.echo(f'Error fetching expenses: {e}')
