@@ -108,4 +108,4 @@ Contributions to the Expense Tracker project are welcome. Please follow these st
 - ©2024 Expense Tracker.This project is licensed under the MIT License.
  
  # contact
-- For any questions or feedback, please contact me at: Thiongoian6148@gmail.com
+- For any questions or feedback, please contact me at: Thiongo.iann@gmail.com
